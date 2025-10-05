@@ -1,0 +1,8 @@
+{
+  "mdb.presetConnections": [
+    {
+      "name": "Atlas Connection",
+      "connectionString": "mongodb+srv://anand:Anand%40123@lms.yimwjul.mongodb.net/"
+    }
+  ]
+}
