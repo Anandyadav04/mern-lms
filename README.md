@@ -1,27 +1,27 @@
-Learning Management System (LMS)
+## Learning Management System (LMS)
 
 A full-stack Learning Management System built with the MERN stack, featuring role-based access control for Students, Instructors, and Admins.
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - Frontend: React.js, Context API/Hooks, Axios, TailwindCSS
 - Backend: Node.js, Express.js, MongoDB, Mongoose
 - Authentication: JWT (JSON Web Tokens), bcryptjs
 - File Upload: Multer
 
-👥 User Roles
+## 👥 User Roles
 
 - Student: Browse courses, enroll, access materials, submit assignments
 - Instructor: Create courses, manage content, grade assignments
 - Admin: Manage users, courses, and platform settings
 
-⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 Prerequisites
 - Node.js
 - MongoDB
 - npm or yarn
 
-1. Clone the Repository
+## 1. Clone the Repository
 ```bash
 git clone https://github.com/Anandyadav04/mern-lms.git
 cd mern-lms
