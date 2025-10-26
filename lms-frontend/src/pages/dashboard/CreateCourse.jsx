@@ -63,7 +63,6 @@ const CreateCourse = () => {
   setLoading(true)
 
   try {
-    // Filter out empty strings from arrays
     const filteredData = {
       ...formData,
       requirements: formData.requirements.filter(req => req.trim() !== ''),
@@ -73,14 +72,14 @@ const CreateCourse = () => {
 
     const formDataToSend = new FormData()
     
-    // Append all regular fields
+    
     Object.keys(filteredData).forEach(key => {
       if (key !== 'requirements' && key !== 'learningOutcomes' && key !== 'whatYouGet') {
         formDataToSend.append(key, filteredData[key])
       }
     })
     
-    // Append arrays as individual fields (most common format for backend)
+    
     filteredData.requirements.forEach((req, index) => {
       formDataToSend.append(`requirements[${index}]`, req)
     })
@@ -93,7 +92,7 @@ const CreateCourse = () => {
       formDataToSend.append(`whatYouGet[${index}]`, item)
     })
     
-    // Append image file if exists
+    
     if (image) {
       formDataToSend.append('image', image)
     }
@@ -153,7 +152,7 @@ const CreateCourse = () => {
               />
             </div>
 
-            {/* Subtitle */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Subtitle
@@ -168,7 +167,7 @@ const CreateCourse = () => {
               />
             </div>
 
-            {/* Description */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Description *
@@ -184,7 +183,7 @@ const CreateCourse = () => {
               />
             </div>
 
-            {/* Requirements */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Requirements
@@ -217,7 +216,7 @@ const CreateCourse = () => {
               </button>
             </div>
 
-            {/* Learning Outcomes */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 What students will learn
@@ -250,7 +249,7 @@ const CreateCourse = () => {
               </button>
             </div>
 
-            {/* What Students Get */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 What students will get
@@ -283,7 +282,7 @@ const CreateCourse = () => {
               </button>
             </div>
 
-            {/* Category and Level */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -324,11 +323,11 @@ const CreateCourse = () => {
               </div>
             </div>
 
-            {/* Price and Duration */}
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Price ($)
+                  Price (₹)
                 </label>
                 <input
                   type="number"
@@ -357,7 +356,7 @@ const CreateCourse = () => {
               </div>
             </div>
 
-            {/* Publish Status */}
+            
             <div className="flex items-center">
               <input
                 type="checkbox"

@@ -23,7 +23,6 @@ const AdminDashboard = () => {
       setStats(response.data.data || {})
     } catch (error) {
       console.error('Error fetching dashboard data:', error)
-      // Fallback to mock data
       setStats({
         totalStudents: 124,
         totalInstructors: 15,
@@ -44,7 +43,6 @@ const AdminDashboard = () => {
 
   const saveSystemSettings = async () => {
     try {
-      // Here you would typically make an API call to save settings
       console.log('Saving system settings:', systemSettings)
       alert('System settings saved successfully!')
     } catch (error) {
@@ -72,7 +70,7 @@ const AdminDashboard = () => {
         <span className="text-gray-600">Welcome back, Administrator</span>
       </div>
 
-      {/* Statistics Cards */}
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
           <h3 className="text-lg font-semibold text-gray-600 mb-2">Total Students</h3>
@@ -100,7 +98,7 @@ const AdminDashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Quick Actions */}
+        
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
           <div className="grid grid-cols-1 gap-4">
@@ -128,11 +126,11 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* System Settings */}
+        
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-lg font-semibold mb-4">System Settings</h2>
           <div className="space-y-4">
-            {/* Site Settings */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Site Name
@@ -157,7 +155,7 @@ const AdminDashboard = () => {
               />
             </div>
 
-            {/* Registration Settings */}
+            
             <div className="flex items-center justify-between">
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -200,7 +198,7 @@ const AdminDashboard = () => {
               </button>
             </div>
 
-            {/* File Upload Settings */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Max File Upload Size (MB)
@@ -217,7 +215,7 @@ const AdminDashboard = () => {
               </select>
             </div>
 
-            {/* Maintenance Mode */}
+            
             <div className="flex items-center justify-between border-t pt-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700">
@@ -239,7 +237,7 @@ const AdminDashboard = () => {
               </button>
             </div>
 
-            {/* Save Button */}
+            
             <button
               onClick={saveSystemSettings}
               className="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors font-medium"
@@ -250,7 +248,7 @@ const AdminDashboard = () => {
         </div>
       </div>
 
-      {/* Recent Activity */}
+      
       <div className="bg-white p-6 rounded-lg shadow-md mt-6">
         <h2 className="text-lg font-semibold mb-4">Recent Activity</h2>
         <div className="space-y-3">

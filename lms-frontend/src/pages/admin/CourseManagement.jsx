@@ -228,7 +228,7 @@ const CourseManagement = () => {
                     {getCourseLevel(course.level)}
                   </td>
                   <td className="px-6 py-4 text-sm text-gray-900">
-                    ${course.price || 0}
+                    ₹{course.price || 0}
                   </td>
                   <td className="px-6 py-4">
                     {getStatusBadge(course)}

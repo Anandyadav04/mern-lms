@@ -23,15 +23,18 @@ const MyCourses = () => {
     }
   }
 
-  const filteredCourses = enrolledCourses.filter(course => {
-    // Ensure progress is within 0-100 range before filtering
-    const progress = Math.min(Math.max(course.progress || 0, 0), 100)
-    
-    if (filter === 'completed') return progress === 100
-    if (filter === 'in-progress') return progress > 0 && progress < 100
-    if (filter === 'not-started') return progress === 0
-    return true
-  })
+  // Filter out courses that are null and then apply the progress filter
+  const filteredCourses = enrolledCourses
+    .filter(enrolledCourse => enrolledCourse.course !== null) // Filter out null courses
+    .filter(enrolledCourse => {
+      // Ensure progress is within 0-100 range before filtering
+      const progress = Math.min(Math.max(enrolledCourse.progress || 0, 0), 100)
+      
+      if (filter === 'completed') return progress === 100
+      if (filter === 'in-progress') return progress > 0 && progress < 100
+      if (filter === 'not-started') return progress === 0
+      return true
+    })
 
   if (loading) {
     return (
@@ -98,7 +101,10 @@ const MyCourses = () => {
         {/* Courses Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCourses.map((enrolledCourse) => (
-            <EnrolledCourseCard key={enrolledCourse.course._id} enrolledCourse={enrolledCourse} />
+            <EnrolledCourseCard 
+              key={enrolledCourse.course._id} 
+              enrolledCourse={enrolledCourse} 
+            />
           ))}
         </div>
 
@@ -123,6 +129,11 @@ const MyCourses = () => {
 }
 
 const EnrolledCourseCard = ({ enrolledCourse }) => {
+  // Add null check for the course object
+  if (!enrolledCourse.course) {
+    return null // Or return a placeholder/skeleton component
+  }
+
   const course = enrolledCourse.course
   // Ensure progress is within 0-100 range
   const progress = Math.min(Math.max(enrolledCourse.progress || 0, 0), 100)

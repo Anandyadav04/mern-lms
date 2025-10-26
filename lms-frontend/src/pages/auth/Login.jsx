@@ -12,13 +12,12 @@ const Login = () => {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const { login, user, isAuthenticated } = useAuth() // Add user and isAuthenticated
+  const { login, user, isAuthenticated } = useAuth() 
   const navigate = useNavigate()
 
-  // Add useEffect to handle redirect after user state updates
+
   useEffect(() => {
     if (isAuthenticated && user) {
-      // Redirect based on user role
       if (user.role === 'admin') {
         navigate('/admin')
       } else {
@@ -45,8 +44,7 @@ const Login = () => {
       setError(result.message)
       setLoading(false)
     }
-    // The redirect will be handled by the useEffect above
-    // Don't navigate here - let the useEffect handle it
+
   }
 
   return (

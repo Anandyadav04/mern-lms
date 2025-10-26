@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { usersAPI, coursesAPI, analyticsAPI } from '../../services/api'
-import { BookOpen, Clock, Award, TrendingUp, Calendar, Plus, Edit2, Trash2, FileText, Users, BarChart3, Target, DollarSign, UserCheck } from 'lucide-react'
+import { BookOpen, Clock, Award, TrendingUp, Calendar, Plus, Edit2, Trash2, FileText, Users, BarChart3, Target, IndianRupee, UserCheck } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 const Dashboard = () => {
@@ -248,8 +248,8 @@ const Dashboard = () => {
       },
       {
         label: 'Total Revenue',
-        value: `$${instructorStats.totalRevenue}`,
-        icon: DollarSign,
+        value: `₹${instructorStats.totalRevenue}`,
+        icon: IndianRupee,
         color: 'green',
         description: 'All time'
       }
