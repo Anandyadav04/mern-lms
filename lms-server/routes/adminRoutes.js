@@ -326,8 +326,6 @@ router.delete('/users/:id', async (req, res) => {
 
     // If deleting an instructor, handle their courses
     if (user.role === 'instructor') {
-      // Option 1: Delete instructor's courses
-      // await Course.deleteMany({ instructor: user._id });
       
       // Option 2: Transfer courses to another instructor or mark as archived
       await Course.updateMany(
@@ -713,7 +711,6 @@ router.get('/reports/:type', async (req, res) => {
   }
 });
 
-// Add this route to your adminRoutes.js
 
 // Delete course
 router.delete('/courses/:id', async (req, res) => {
@@ -727,8 +724,7 @@ router.delete('/courses/:id', async (req, res) => {
       });
     }
 
-    // Optional: Add additional checks here
-    // For example, you might want to prevent deletion of courses with active enrollments
+   
     if (course.studentsEnrolled && course.studentsEnrolled.length > 0) {
       return res.status(400).json({
         success: false,
