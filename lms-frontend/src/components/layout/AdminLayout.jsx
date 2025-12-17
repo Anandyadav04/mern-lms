@@ -1,7 +1,7 @@
 // components/layout/AdminLayout.jsx
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import AdminSidebar from './AdminSidebar'
+import AdminSidebar from './Adminsidebar'
 import { useAuth } from '../../context/AuthContext'
 
 const AdminLayout = () => {
