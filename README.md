@@ -37,6 +37,7 @@ cp .env.example .env
 # Add your environment variables:
 # MONGODB_URI=your_mongodb_connection_string
 # JWT_SECRET=your_jwt_secret
+# JWT_EXPIRE=7d
 # PORT=5000
 
 # Start the server
