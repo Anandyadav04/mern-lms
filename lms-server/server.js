@@ -28,7 +28,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "*",   // TEMPORARY
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -42,7 +45,7 @@ app.use('/api/quiz', quizRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use('/api/progress', progress);
 app.use('/api/admin', adminRoutes)
-app.use('/api/courses', ratingRoutes);
+app.use('/api/ratings', ratingRoutes);
 app.use('/api/analytics', analyticsRoutes); // ADD THIS LINE
 
 // Error handling middleware
