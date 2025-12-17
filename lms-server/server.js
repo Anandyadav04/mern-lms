@@ -29,7 +29,10 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: "*",   // TEMPORARY
+  origin: [
+    "http://localhost:5173",
+    "https://studybitz.netlify.app/"
+  ],   // TEMPORARY
   methods: ["GET", "POST", "PUT", "DELETE"]
 }));
 app.use(express.json());
