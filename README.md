@@ -2,6 +2,8 @@
 
 A full-stack Learning Management System built with the MERN stack, featuring role-based access control for Students, Instructors, and Admins.
 
+## 🌐 Live Project: https://studybitz.netlify.app/
+
 ## 🛠️ Tech Stack
 
 - Frontend: React.js, Context API/Hooks, Axios, TailwindCSS
