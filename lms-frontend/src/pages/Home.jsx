@@ -135,10 +135,10 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: "50K+", label: "Active Students" },
-    { value: "2K+", label: "Expert Instructors" },
-    { value: "100+", label: "Courses Available" },
-    { value: "95%", label: "Completion Rate" }
+    { value: "5K+", label: "Learners Enrolled" },
+    { value: "120+", label: "Courses" },
+    { value: "60+", label: "Instructors" },
+    { value: "85%", label: "Course Completion Rate" }
   ];
 
   // Helper function to safely extract instructor name
@@ -293,7 +293,7 @@ const Home = () => {
                       
                       <div className="flex items-center justify-between">
                         <span className="text-2xl font-bold text-primary-600">
-                          {course.price === 0 ? 'Free' : `$${course.price}`}
+                          {course.price === 0 ? 'Free' : `₹${course.price}`}
                         </span>
                         <Link 
                           to={`/courses/${course.id || course._id}`} 
